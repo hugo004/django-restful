@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     # custom
     'rest_framework',
     'drf_yasg',
-    'todo'
+    'todo',
+    'user',
+    'dailyrecord'
 ]
 
 MIDDLEWARE = [

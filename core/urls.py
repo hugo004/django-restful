@@ -23,7 +23,9 @@ from rest_framework import routers
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
-from todo import views
+from todo.views import TodoViewSet
+from user.views import UserProfileViewSet
+from dailyrecord.views import DailyRecordViewSet
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -36,7 +38,9 @@ schema_view = get_schema_view(
 )
 
 router =  routers.SimpleRouter()
-router.register(r'todos', views.TodoViewSet)
+router.register(r'todos', TodoViewSet)
+router.register(r'User', UserProfileViewSet)
+router.register(r'Daily Record', DailyRecordViewSet)
 
 urlpatterns = [
     url(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
